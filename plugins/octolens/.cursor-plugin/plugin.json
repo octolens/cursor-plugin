@@ -1,0 +1,25 @@
+{
+  "name": "octolens",
+  "displayName": "Octolens",
+  "version": "0.1.0",
+  "description": "Social listening in Cursor. Auto-configures the Octolens MCP server and bundles a skill, rule, commands, and an analyst agent for working with brand mentions, keywords, feeds, analytics, and Slack/email/webhook alerts.",
+  "author": {
+    "name": "Octolens",
+    "email": "support@octolens.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "octolens",
+    "social-listening",
+    "mentions",
+    "brand-monitoring",
+    "mcp",
+    "reddit",
+    "twitter",
+    "linkedin",
+    "hackernews",
+    "github",
+    "analytics"
+  ],
+  "logo": "assets/logo.svg"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "octolens",
+  "owner": {
+    "name": "Octolens",
+    "email": "support@octolens.com"
+  },
+  "metadata": {
+    "description": "Octolens plugins for Cursor — social-listening across Reddit, X, LinkedIn, YouTube, Hacker News, GitHub, news, podcasts, and the open web.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "octolens",
+      "source": "./plugins/octolens",
+      "description": "Query and manage Octolens social-listening data — mentions, keywords, feeds, analytics, and Slack/email/webhook alerts. Auto-configures the Octolens MCP server."
+    }
+  ]
+}

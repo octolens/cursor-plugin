@@ -1,0 +1,41 @@
+---
+description: How to work with Octolens social-listening data (mentions, keywords, feeds, analytics, alerts) via the Octolens MCP server or REST API v2. Apply whenever the user wants to fetch or filter brand mentions, set up keyword tracking, configure Slack/email/webhook alerts, or run sentiment/volume/source analytics.
+alwaysApply: false
+---
+
+# Octolens
+
+This plugin auto-configures the **Octolens MCP server** (`octolens`). Octolens is a
+social-listening platform: a workspace tracks **keywords** (a brand, competitor, or
+product phrase), a pipeline collects matching posts — **mentions** — from Reddit,
+Twitter/X, LinkedIn, YouTube, TikTok, Bluesky, Hacker News, GitHub, news, podcasts,
+and the open web, and every mention is AI-scored for relevance, sentiment, and topic
+**tags**. Saved filter presets are **feeds**, which can drive notifications.
+
+## Use the MCP first
+
+When the Octolens MCP tools are connected (names start with `octolens` / `Octolens`),
+use them directly — they are self-documenting. Typical tools: `list_mentions`,
+`get_mention`, `list_keywords` / `add_keyword` / `update_keyword` / `pause_keyword` /
+`delete_keyword`, `list_feeds` / `create_feed` / `update_feed`, `list_tags`,
+`get_workspace`, `get_usage`, `analytics`, `search_slack_channels`,
+`list_keyword_suggestions`. Read each tool's description — don't guess parameters.
+
+If MCP isn't available, fall back to the REST API v2 (`https://app.octolens.com/api/v2`,
+Bearer auth with an `ak_...` API key). See the bundled `octolens` skill for the full
+endpoint catalog and filter shapes.
+
+## Rules of engagement
+
+- **Resolve keyword names to numeric IDs first.** The `keyword` filter is ID-only; a
+  name returns a 400. Use `find_keyword` / `list_keywords` (or `GET /keywords`) before filtering.
+- **Never invent values for write tools.** `add_*` / `update_*` / `create_*` / `delete_*` /
+  `pause_*` mutate the live workspace. Gather every value (emails, Slack channels, webhook
+  URLs, frequencies, exclude lists) from the user — don't fabricate them.
+- **To wire a Slack alert:** `search_slack_channels` to get channel IDs → `create_feed`
+  with a SLACK destination.
+- **Summarize, don't dump.** Turn mention lists into insight: sentiment split, top
+  sources/authors, volume trend.
+
+For details (auth, mention filter syntax, gotchas, every REST endpoint), defer to the
+**octolens skill** in this plugin.
