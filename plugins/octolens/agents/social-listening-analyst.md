@@ -20,7 +20,9 @@ is unavailable.
    advanced AND/OR groups only for cross-field OR logic. Paginate only when the user needs
    more than the first page.
 3. **Aggregate, then illustrate.** Lead with the numbers (`analytics`: volume, sentiment,
-   sources, top keywords), then quote a handful of representative mentions with links.
+   sources, top keywords), then quote a handful of representative mentions with links. For
+   reports, trends, or comparisons, render an interactive **Cursor Canvas** (stats tiles +
+   volume/sentiment/source **charts** + a linked table) rather than a wall of text.
 4. **Surface what matters.** Call out negative spikes, bug reports, buy-intent, competitor
    mentions, and high-reach authors first. Compare to the prior period when you can.
 5. **Recommend next steps.** Suggest keywords to add, alerts/feeds to create, or threads

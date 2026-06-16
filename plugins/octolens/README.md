@@ -20,6 +20,9 @@ LinkedIn, YouTube, TikTok, Bluesky, Hacker News, GitHub, news, podcasts, and the
   - `/octolens-add-keyword` — track a new keyword
 - **Agent** (`social-listening-analyst`) — turns mentions into insight and actions.
 
+Analytics render as interactive **Cursor Canvas** dashboards (stats, charts, tables) —
+ask for a report and you get a live dashboard, not a wall of text.
+
 ## Requirements
 
 - An Octolens account. The MCP server works on any plan via OAuth; the REST API v2

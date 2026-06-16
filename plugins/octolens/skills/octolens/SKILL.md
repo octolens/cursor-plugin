@@ -156,6 +156,20 @@ To build a filter from plain English, POST the request to `/api/v2/ai/filter-wiz
 - **`platforms` on a keyword** is returned as a string array but several other places (and the create body) accept comma strings — check `references/REST-API.md` for the exact shape per endpoint.
 - This skill ships **no scripts** — call the API directly with `curl` / `fetch`, or use MCP.
 
+## Visualize with Cursor Canvas
+
+In Cursor, prefer rendering Octolens analytics as an interactive **Canvas** instead of a wall of text. Canvas lets the agent build a live dashboard — `sections`, `stats`, `tables`, and **`charts`** — on the fly, tailored to the request and clickable/filterable. It's a strong fit for Octolens because most useful answers here are aggregations.
+
+Reach for a Canvas when the user wants a report, dashboard, trend, or comparison (anything you'd otherwise summarize as numbers):
+
+- **Volume over time** → line/area chart (mentions per day/week; overlay the previous period).
+- **Sentiment** → stacked bar or donut (positive / neutral / negative split).
+- **Top sources / authors** → bar chart + a table with links to standout mentions.
+- **Keyword or competitor comparison** → grouped bars or small multiples.
+- **At-a-glance KPIs** → `stats` tiles (total mentions, Δ vs. prior period, % positive, reach).
+
+How to use it: pull the data via the `analytics` MCP tool (or `list_mentions` / the REST `analytics/*` endpoints), then ask the agent to render it — or the user can run **Open Canvas** from the command palette. A short prompt like "show me last 30 days of mentions as a dashboard" should produce the chart set above. Single mentions or tiny result sets don't need a Canvas — a quick text summary is fine.
+
 ## Workflow
 
 1. Decide MCP vs REST (above). If MCP tools are connected, use them.
